@@ -13,7 +13,7 @@ function App(): JSX.Element {
   return (
     <SafeAreaView style={styles.container}>
       <View>
-        <Text>Hell world</Text>
+        <Text style={{color: 'red'}}>Hell world</Text>
       </View>
     </SafeAreaView>
   );
