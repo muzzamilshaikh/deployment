@@ -35,7 +35,7 @@ jobs:
           name: app-release.apk
           path: android/app/build/outputs/apk/release/app-release.apk
       - name: Send APK to Slack
-        uses: adrey/slack-file-upload-action@1.0.5
+        uses: adrey/slack-file-upload-action@master
         with:
           token: ${{ secrets.SLACK_TOKEN }}
           path: ./android/app/build/outputs/apk/release/app-release.apk
