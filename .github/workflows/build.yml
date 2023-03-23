@@ -30,11 +30,12 @@ jobs:
         with:
           name: app-release.apk
           path: android/app/build/outputs/apk/release/app-release.apk
-      - name: upload apk to slack
-        uses: adrey/slack-file-upload-action@master
+      - name: Upload apk to slack
+        uses: MeilCli/slack-upload-file@v3
         with:
-          token: ${{ secrets.SLACK_TOKEN }}
-          path: ./android/app/build/outputs/apk/release/app-release.apk
-          channel: ${{ secrets.SLACK_CHANNEL_DEPLOY }}
-          filename: Github Actions App.apk
+          slack_token: ${{ secrets.SLACK_READ_WRITE_TOKEN }}
+          channels: ${{ secrets.SLACK_CHANNEL_DEPLOY }}
+          file_path: 'android/app/build/outputs/apk/release/app-release.apk'
+          file_name: 'app-release.apk'
+          file_type: 'apk'
           initial_comment: ${{ github.event.head_commit.message }}
