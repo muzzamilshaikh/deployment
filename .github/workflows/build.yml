@@ -33,7 +33,7 @@ jobs:
       - name: Upload apk to slack
         uses: MeilCli/slack-upload-file@v3
         with:
-          slack_token: ${{ secrets.SLACK_READ_WRITE_TOKEN }}
+          slack_token: ${{ secrets.SLACK_TOKEN }}
           channels: ${{ secrets.SLACK_CHANNEL_DEPLOY }}
           file_path: 'android/app/build/outputs/apk/release/app-release.apk'
           file_name: 'app-release.apk'
